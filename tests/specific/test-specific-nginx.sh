@@ -13,10 +13,11 @@ echo "Running web server tests:"
 echo ""
 
 # Create a test file
+mkdir -p /tmp/www
 echo "OK" > /tmp/www/index.html
 
 # Start the web server, mounting the directory containing our test file
-docker run -h test.host -d --volume /tmp/www:/var/www/html -p 8888:80 $IMAGE_NAME || exit 1
+docker run -h test.host -d --volume /tmp/www:/var/www/html -p 8888:80 $IMAGE || exit 1
 echo ""
 
 # Spent up to a minute trying to connect to the web server
