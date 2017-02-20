@@ -15,6 +15,7 @@ echo ""
 echo "Test Runner Configuration:"
 echo ""
 echo "Image: $IMAGE"
+echo "Test: Docker Builod"
 
 ################################################################################
 # Build our images
@@ -22,13 +23,5 @@ echo "Image: $IMAGE"
 echo ""
 echo "Building image.."
 echo ""
-cd $IMAGE && docker build -t $IMAGE . || exit 1
-cd ..
 
-################################################################################
-# Running shellcheck
-################################################################################
-echo ""
-echo "Checking shell scripts"
-echo ""
-shellcheck --exclude=SC2086,SC2006 $IMAGE/bin/* || exit 1
+cd $IMAGE && docker build -t $IMAGE . || exit 1
