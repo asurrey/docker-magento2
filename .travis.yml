@@ -17,5 +17,6 @@ install:
   - sudo apt-get install -y shellcheck
 
 script:
-  - bash tests/test-bash-scripts.sh
-  - bash tests/test-docker-build.sh
+  - bash tests/bash/test-bash-scripts.sh
+  - bash tests/docker/test-docker-build.sh
+  - bash tests/specific/test-specific.sh
